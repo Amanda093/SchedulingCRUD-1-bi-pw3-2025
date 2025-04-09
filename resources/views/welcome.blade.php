@@ -34,11 +34,10 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link active text-white" aria-current="page"
-                                    href="{{ route('welcome') }}">Cadastrar</a>
+                                <a class="nav-link active text-white" aria-current="page" href="welcome">Cadastrar</a>
                             </li>
 
-                            <li class="nav-item">
+                            <li class=" nav-item">
                                 <a class="nav-link text-white" href="/listar.blade.php">Consultar</a>
                             </li>
 
@@ -55,11 +54,11 @@
             </nav>
 
             <div class="py-3">
-                <h2><b>Cadastrar clientes</b></h2>
+                <h2><b>Cadastrar clients</b></h2>
                 <h3>Sistema utilizado para o agendamento de serviços</h3>
             </div>
 
-            <form action="/cadastrar-cliente" method="POST" class="row g-2">
+            <form action="/cadastrar-client" method="POST" class="row g-2">
                 @csrf
 
                 <div class="mb-3">

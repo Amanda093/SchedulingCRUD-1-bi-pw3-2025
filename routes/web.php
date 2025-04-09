@@ -20,12 +20,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/', 'listar')->name('listar');
-Route::view('editar', 'editar')->name('editar');
-Route::view('excluir', 'excluir')->name('excluir');
 
 // CREATE
-Route::post('/cadastrar-cliente', function (Request $request) {
+Route::post('/cadastrar-client', function (Request $request) {
     //dd($request->all());
 
     Client::create([
@@ -36,22 +33,22 @@ Route::post('/cadastrar-cliente', function (Request $request) {
         'observacao' => $request->observacao
     ]);
 
-    echo "cliente criado com sucesso";
+    echo "client criado com sucesso";
 });
 
 // READ
-Route::get('/listar-cliente/{id}', function ($id) {
-    //dd(cliente::find($id)); debug and die
-    $cliente = cliente::find($id);
-    return view('listar', ['cliente' => $cliente]);
+Route::get('/listar-client/{id}', function ($id) {
+    //dd(client::find($id)); debug and die
+    $client = client::find($id);
+    return view('listar', ['client' => $client]);
 });
 
 // 
-Route::get('/editar-cliente/{id}', function (Request $request, $id) {
+Route::get('/editar-client/{id}', function (Request $request, $id) {
     //dd($request->all());
-    $cliente = cliente::find($id);
+    $client = client::find($id);
 
-    $cliente->update([
+    $client->update([
         'nome' => $request->nome,
         'telefone' => $request->telefone,
         'origem' => $request->origem,
@@ -59,14 +56,14 @@ Route::get('/editar-cliente/{id}', function (Request $request, $id) {
         'observacao' => $request->observacao
     ]);
 
-    echo "cliente editado com sucesso!";
+    echo "client editado com sucesso!";
 });
 
 // DELETE
-Route::get('/excluir-cliente/{id}', function ($id) {
+Route::get('/excluir-client/{id}', function ($id) {
     //dd($request->all());
-    $cliente = cliente::find($id);
-    $cliente->delete();
+    $client = client::find($id);
+    $client->delete();
 
-    echo "cliente excluido com sucesso!";
+    echo "client excluido com sucesso!";
 });

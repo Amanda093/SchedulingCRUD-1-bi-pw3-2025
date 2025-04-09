@@ -32,28 +32,28 @@
             </nav>
 
             <div class="py-3">
-                <h2><b>Consultar clientes</b></h2>
+                <h2><b>Consultar clients</b></h2>
                 <h3>Sistema utilizado para o agendamento de serviços</h3>
             </div>
 
-            <form action="/editar-cliente/{{ $cliente->id }}" method="POST" class="row g-2">
+            <form action="/editar-client/{{ $client->id }}" method="POST" class="row g-2">
                 @csrf
 
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">Nome</label>
-                    <input type="text" name="nome" value="{{ $cliente->nome }}" class="form-control"
+                    <input type="text" name="nome" value="{{ $client->nome }}" class="form-control"
                         id="formGroupExampleInput" placeholder="">
                 </div>
 
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Telefone</label>
-                    <input type="text" name="telefone" value="{{ $cliente->telefone }}" class="form-control"
+                    <input type="text" name="telefone" value="{{ $client->telefone }}" class="form-control"
                         id="formGroupExampleInput2" placeholder="">
                 </div>
 
                 <div class=" mb-3">
                     <label class="form-label" for="inputGroupSelect01">Origem</label>
-                    <select name="origem" value="{{ $cliente->origem }}" class="form-select"
+                    <select name="origem" value="{{ $client->origem }}" class="form-select"
                         aria-label="Default select example">
                         <option selected>Escolha...</option>
                         <option value="telefone">Telefone</option>
@@ -64,13 +64,13 @@
 
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">Data de contato</label>
-                    <input type="date" name="datadecontato" value="{{ $cliente->datadecontato }}" class="form-control"
+                    <input type="date" name="datadecontato" value="{{ $client->datadecontato }}" class="form-control"
                         id="formGroupExampleInput" placeholder="">
                 </div>
 
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Observação</label>
-                    <textarea name="observacao" value="{{ $cliente->observacao }}" class="form-control"
+                    <textarea name="observacao" value="{{ $client->observacao }}" class="form-control"
                         id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
 
