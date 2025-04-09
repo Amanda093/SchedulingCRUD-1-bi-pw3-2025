@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 use App\Models\Client;
 use Illuminate\Http\Request;
 
@@ -62,7 +63,11 @@ Route::post('/editar-cliente/{id}', function (Request $request, $id) {
         'observacao' => $request->observacao
     ]);
 
-    echo "Cliente editado com sucesso!";
+    return view('components.modal-mensagem', [
+        'titulo' => 'Sucesso!',
+        'mensagem' => 'Cliente atualizado com sucesso!',
+        'voltar' => '/'
+    ]);
 });
 
 // DELETE
