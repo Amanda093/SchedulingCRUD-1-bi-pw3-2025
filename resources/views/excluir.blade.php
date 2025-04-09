@@ -36,7 +36,7 @@
                 <h3>Sistema utilizado para o agendamento de serviços</h3>
             </div>
 
-            <form action="/editar-client/{{ $client->id }}" method="POST" class="row g-2">
+            <form action="/editar-cliente/{{ $client->id }}" method="POST" class="row g-2">
                 @csrf
 
                 <div class="mb-3">

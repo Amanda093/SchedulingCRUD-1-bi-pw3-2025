@@ -16,13 +16,21 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Client;
 use Illuminate\Http\Request;
 
+// READ
 Route::get('/', function () {
-    return view('welcome');
+    // pega todas as informações do Cliente no banco de dados
+    $clients = Client::all();
+
+    return view('listar', ['clients' => $clients]);
 });
 
 
 // CREATE
-Route::post('/cadastrar-client', function (Request $request) {
+Route::get('/cadastrar', function () {
+    return view('cadastrar');
+});
+
+Route::post('/cadastrar-cliente', function (Request $request) {
     //dd($request->all());
 
     Client::create([
@@ -33,18 +41,16 @@ Route::post('/cadastrar-client', function (Request $request) {
         'observacao' => $request->observacao
     ]);
 
-    echo "client criado com sucesso";
+    echo "Cliente criado com sucesso!";
 });
 
-// READ
-Route::get('/listar-client/{id}', function ($id) {
-    //dd(client::find($id)); debug and die
-    $client = client::find($id);
-    return view('listar', ['client' => $client]);
+// UPDATE
+Route::get('/editar/{id}', function ($id) {
+    $client = Client::find($id);
+    return view('editar', ['client' => $client]);
 });
 
-// 
-Route::get('/editar-client/{id}', function (Request $request, $id) {
+Route::post('/editar-cliente/{id}', function (Request $request, $id) {
     //dd($request->all());
     $client = client::find($id);
 
@@ -56,10 +62,14 @@ Route::get('/editar-client/{id}', function (Request $request, $id) {
         'observacao' => $request->observacao
     ]);
 
-    echo "client editado com sucesso!";
+    echo "cliente editado com sucesso!";
 });
 
 // DELETE
+Route::get('/excluir/{id}', function () {
+    return view('excluir');
+});
+
 Route::get('/excluir-client/{id}', function ($id) {
     //dd($request->all());
     $client = client::find($id);

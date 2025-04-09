@@ -22,8 +22,8 @@
 </head>
 
 <body>
-    <div>
-        <div class="container p-5">
+    <div class="">
+        <div class="container p-5 ">
             <nav class="navbar navbar-expand-lg bg-primary rounded">
                 <div class="container-fluid">
                     <a class="navbar-brand text-white" href="#">Sistema Web</a>
@@ -34,7 +34,7 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link active text-white" aria-current="page" href="welcome">Cadastrar</a>
+                                <a class="nav-link active text-white" aria-current="page" href="cadastrar">Cadastrar</a>
                             </li>
 
                             <li class=" nav-item">
@@ -58,7 +58,7 @@
                 <h3>Sistema utilizado para o agendamento de serviços</h3>
             </div>
 
-            <form action="/cadastrar-client" method="POST" class="row g-2">
+            <form action="/cadastrar-cliente" method="POST" class="row g-2">
                 @csrf
 
                 <div class="mb-3">
