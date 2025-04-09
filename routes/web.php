@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-use App\Models\Product;
+use App\Models\Client;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
@@ -25,10 +25,10 @@ Route::view('editar', 'editar')->name('editar');
 Route::view('excluir', 'excluir')->name('excluir');
 
 // CREATE
-Route::post('/cadastrar-produto', function (Request $request) {
+Route::post('/cadastrar-cliente', function (Request $request) {
     //dd($request->all());
 
-    Product::create([
+    Client::create([
         'nome' => $request->nome,
         'telefone' => $request->telefone,
         'origem' => $request->origem,
@@ -36,22 +36,22 @@ Route::post('/cadastrar-produto', function (Request $request) {
         'observacao' => $request->observacao
     ]);
 
-    echo "Produto criado com sucesso";
+    echo "cliente criado com sucesso";
 });
 
 // READ
-Route::get('/listar-produto/{id}', function($id) {
-    //dd(Produto::find($id)); debug and die
-    $produto = Produto::find($id);
-    return view('listar', ['produto' => $produto]);
+Route::get('/listar-cliente/{id}', function ($id) {
+    //dd(cliente::find($id)); debug and die
+    $cliente = cliente::find($id);
+    return view('listar', ['cliente' => $cliente]);
 });
 
 // 
-Route::get('/editar-produto/{id}', function(Request $request, $id) {
+Route::get('/editar-cliente/{id}', function (Request $request, $id) {
     //dd($request->all());
-    $produto = Produto::find($id);
+    $cliente = cliente::find($id);
 
-    $produto->update([
+    $cliente->update([
         'nome' => $request->nome,
         'telefone' => $request->telefone,
         'origem' => $request->origem,
@@ -59,14 +59,14 @@ Route::get('/editar-produto/{id}', function(Request $request, $id) {
         'observacao' => $request->observacao
     ]);
 
-    echo "Produto editado com sucesso!";
+    echo "cliente editado com sucesso!";
 });
 
 // DELETE
-Route::get('/excluir-produto/{id}', function($id) {
+Route::get('/excluir-cliente/{id}', function ($id) {
     //dd($request->all());
-    $produto = Produto::find($id);
-    $produto->delete();
+    $cliente = cliente::find($id);
+    $cliente->delete();
 
-    echo "Produto excluido com sucesso!";
+    echo "cliente excluido com sucesso!";
 });

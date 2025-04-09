@@ -23,7 +23,7 @@
 
 <body>
     <div>
-        <div class="container p-5">  
+        <div class="container p-5">
             <nav class="navbar navbar-expand-lg bg-primary rounded">
                 <div class="container-fluid">
                     <a class="navbar-brand text-white" href="#">Sistema Web</a>
@@ -34,13 +34,14 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link active text-white" aria-current="page" href="{{ route('welcome') }}">Cadastrar</a>
+                                <a class="nav-link active text-white" aria-current="page"
+                                    href="{{ route('welcome') }}">Cadastrar</a>
                             </li>
-                            
+
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="/listar.blade.php">Consultar</a>
                             </li>
-                            
+
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="editar.blade.php">Editar</a>
                             </li>
@@ -54,11 +55,11 @@
             </nav>
 
             <div class="py-3">
-                <h2><b>Cadastrar produtos</b></h2>
+                <h2><b>Cadastrar clientes</b></h2>
                 <h3>Sistema utilizado para o agendamento de serviços</h3>
             </div>
 
-            <form action="/cadastrar-produto" method="POST" class="row g-2">
+            <form action="/cadastrar-cliente" method="POST" class="row g-2">
                 @csrf
 
                 <div class="mb-3">
