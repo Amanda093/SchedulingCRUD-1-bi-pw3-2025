@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 use App\Models\Client;
 use Illuminate\Http\Request;
 
