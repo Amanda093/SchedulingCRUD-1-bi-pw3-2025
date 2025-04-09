@@ -6,13 +6,11 @@ use Illuminate\View\Component;
 
 class ModalMensagem extends Component
 {
-    public $titulo;
     public $mensagem;
     public $voltar;
 
-    public function __construct($titulo, $mensagem, $voltar = '/')
+    public function __construct($mensagem, $voltar = '/')
     {
-        $this->titulo = $titulo;
         $this->mensagem = $mensagem;
         $this->voltar = $voltar;
     }

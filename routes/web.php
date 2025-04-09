@@ -42,7 +42,10 @@ Route::post('/cadastrar-cliente', function (Request $request) {
         'observacao' => $request->observacao
     ]);
 
-    echo "Cliente criado com sucesso!";
+    return view('components.modal-mensagem', [
+        'mensagem' => 'Cliente criado com sucesso!',
+        'voltar' => '/'
+    ]);
 });
 
 // UPDATE
@@ -64,7 +67,6 @@ Route::post('/editar-cliente/{id}', function (Request $request, $id) {
     ]);
 
     return view('components.modal-mensagem', [
-        'titulo' => 'Sucesso!',
         'mensagem' => 'Cliente atualizado com sucesso!',
         'voltar' => '/'
     ]);
@@ -81,5 +83,8 @@ Route::post('/excluir-cliente/{id}', function ($id) {
     $client = client::find($id);
     $client->delete();
 
-    echo "client excluido com sucesso!";
+    return view('components.modal-mensagem', [
+        'mensagem' => 'Cliente excluido com sucesso!',
+        'voltar' => '/'
+    ]);
 });
