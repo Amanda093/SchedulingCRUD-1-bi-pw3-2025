@@ -35,11 +35,11 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="cadastrar">Cadastrar</a>
+                            <a class="nav-link text-white" href="../cadastrar">Cadastrar</a>
                         </li>
 
                         <li class=" nav-item">
-                            <a class="nav-link  active text-white" aria-current="page" href="/">Consultar</a>
+                            <a class="nav-link  active text-white" href="/">Consultar</a>
                         </li>
                     </ul>
                 </div>
@@ -70,12 +70,11 @@
 
                 <div class=" mb-3">
                     <label class="form-label" for="inputGroupSelect01">Origem</label>
-                    <select name="origem" value="{{ $client->origem }}" class="form-select"
-                        aria-label="Default select example">
-                        <option selected>Escolha...</option>
-                        <option value="telefone">Telefone</option>
-                        <option value="whatssap">Whatssap</option>
-                        <option value="celular">Celular</option>
+                    <select name="origem" class="form-select" aria-label="Default select example">
+                        <option disabled {{ $client->origem == '' ? 'selected' : '' }}>Escolha...</option>
+                        <option value="telefone" {{ $client->origem == 'telefone' ? 'selected' : '' }}>telefone</option>
+                        <option value="whatssap" {{ $client->origem == 'whatssap' ? 'selected' : '' }}>whatsapp</option>
+                        <option value="celular" {{ $client->origem == 'celular' ? 'selected' : '' }}>celular</option>
                     </select>
                 </div>
 
@@ -87,8 +86,7 @@
 
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Observação</label>
-                    <textarea name="observacao" value="{{ $client->observacao }}" class="form-control"
-                        id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea name="observacao" class="form-control" rows="3">{{ $client->observacao }}</textarea>
                 </div>
 
                 <button class="btn btn-primary">Editar</button>

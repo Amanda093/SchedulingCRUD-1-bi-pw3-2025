@@ -46,7 +46,7 @@ Route::post('/cadastrar-cliente', function (Request $request) {
 
 // UPDATE
 Route::get('/editar/{id}', function ($id) {
-    $client = Client::find($id);
+    $client = client::find($id);
     return view('editar', ['client' => $client]);
 });
 
@@ -62,15 +62,16 @@ Route::post('/editar-cliente/{id}', function (Request $request, $id) {
         'observacao' => $request->observacao
     ]);
 
-    echo "cliente editado com sucesso!";
+    echo "Cliente editado com sucesso!";
 });
 
 // DELETE
-Route::get('/excluir/{id}', function () {
-    return view('excluir');
+Route::get('/excluir/{id}', function ($id) {
+    $client = client::find($id);
+    return view('excluir', ['client' => $client]);
 });
 
-Route::get('/excluir-client/{id}', function ($id) {
+Route::post('/excluir-cliente/{id}', function ($id) {
     //dd($request->all());
     $client = client::find($id);
     $client->delete();

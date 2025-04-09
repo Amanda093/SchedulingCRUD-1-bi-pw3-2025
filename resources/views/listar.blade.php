@@ -74,7 +74,7 @@
                             <td>{{ $client->datadecontato }}</td>
                             <td>{{ $client->observacao }}</td>
 
-                            <td>
+                            <td class="">
                                 <a href="editar/{{ $client->id }}" class="btn btn-primary" role="button">Editar</a>
                                 <a href="excluir/{{ $client->id }}" class="btn btn-danger" role="button">Excluir</a>
                             </td>

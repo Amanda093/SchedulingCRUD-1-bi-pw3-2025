@@ -23,38 +23,32 @@
 
 <body>
     <div class="">
-        <div class="container p-5 ">
-            <nav class="navbar navbar-expand-lg bg-primary rounded">
-                <div class="container-fluid">
-                    <a class="navbar-brand text-white" href="#">Sistema Web</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link active text-white" aria-current="page" href="cadastrar">Cadastrar</a>
-                            </li>
 
-                            <li class=" nav-item">
-                                <a class="nav-link text-white" href="/listar.blade.php">Consultar</a>
-                            </li>
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="/">SISTEMA WEB</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" aria-current="page" href="cadastrar">Cadastrar</a>
+                        </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="editar.blade.php">Editar</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="excluir.blade.php">Excluir</a>
-                            </li>
-                        </ul>
-                    </div>
+                        <li class=" nav-item">
+                            <a class="nav-link  active text-white" href="/">Consultar</a>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
+            </div>
+        </nav>
 
+        <div class="container p-5 ">
             <div class="py-3">
-                <h2><b>Cadastrar clients</b></h2>
+                <h2><b>Cadastrar clientes</b></h2>
                 <h3>Sistema utilizado para o agendamento de serviços</h3>
             </div>
 
